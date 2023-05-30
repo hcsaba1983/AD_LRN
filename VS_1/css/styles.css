@@ -53,4 +53,5 @@ h3 {
 h3:hover {
     background: aqua;
     cursor: pointer;
+    border-color: black;
 }
