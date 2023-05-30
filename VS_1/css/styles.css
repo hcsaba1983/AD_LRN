@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "Anton";
+    src: url("../fonts/Anton-Regular.ttf");
+}
+
+:root {
+    --whitest: #74EFFA;
+    --lightest: #18E8FB;
+    --lighter: #02E9FF;
+    --main: #00C6D7;
+    --darker: #008996;
+    --darkest: #006C76;
+
+    --alter: #404C4E; /*  var(--alter) */
+}
+
+html {
+    scroll-behavior: smooth;
+    margin:    0 auto;
+    max-width: 1600px;
+    overflow: auto;
+}
+
+html * {
+    font-family: 'Poppins', sans-serif;
+    font-family: Poppins;
+}
+
+body {
+    
+}
+
+.ismerteto-szoveg {
+    background: rgb(185, 176, 199);
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+h3 {
+    background: whitesmoke;
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: end;
+    margin: 30px auto;
+}
+
+h3:hover {
+    background: aqua;
+    cursor: pointer;
+}
