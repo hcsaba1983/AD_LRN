@@ -16,4 +16,6 @@ function onOsszeadas() {
 
 function onKivonas() {
     let mibol = document.getElementById("mibol").value;
+    let mennyit = document.getElementById("mennyit").value;
+    alert(mibol - mennyit);    
 }
