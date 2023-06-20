@@ -82,3 +82,39 @@ input {
     border-radius: 8px;
     margin: 4px auto;
 }
+
+.teendo-kartya {
+    border: 1px solid var(--darker);
+    border-radius: 12px;
+    padding: 20px;
+
+}
+
+.teendo-kartya {
+    position: relative;
+}
+
+.teendo-id {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-weight: bold;
+}
+
+.teendo-nev {
+    padding-top: 24px;
+    padding-bottom: 20px;
+    font-style: italic;
+}
+
+.teendo-keszultsege {
+    
+}
+
+.teendo-kesz {
+    color: grey;
+}
+
+.teendo-nyitott {
+    color: red;
+}
