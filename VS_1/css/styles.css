@@ -63,3 +63,9 @@ h3:hover {
     border: 1px solid black;
     border-radius: 12px;
 }
+
+input {
+    display: block;   
+    margin: 8px auto;
+    text-align: end;
+}
