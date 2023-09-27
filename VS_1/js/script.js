@@ -1,3 +1,5 @@
+var users = [];
+
 function onLoad() {
 
 
@@ -40,6 +42,16 @@ function onGeneralas() {
 }
 
 function onLetoltTeendok() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json => {
+        users = json;
+        letoltTeendok();
+      })
+}
+
+function letoltTeendok() {
+
     let teendo = '<div class="kartya-wrapper col-12 col-md-6 col-lg-4">' + 
         '<div class="teendo-kartya">' + 
         '    <div class="teendo-id">#ID#</div>' + 
@@ -49,14 +61,21 @@ function onLetoltTeendok() {
         '    </div>' + 
         '</div>';
 
+    let teendoDiv = "";
 
-
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
       .then(json => {
-        teendo = teendo.replace("#NEV#", json['title']);
+        for (let index = 0; index < 6; index++) {
+            const element = json[index];
+            
+            teendoDiv += teendo.replace("#NEV#", json[index]['title']);
 
-        document.getElementById('teendok').innerHTML = teendo;
+        }
+
+
+
+        document.getElementById('teendok').innerHTML = teendoDiv;
       })
     
 }

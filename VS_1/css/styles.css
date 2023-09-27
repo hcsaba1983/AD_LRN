@@ -87,7 +87,7 @@ input {
     border: 1px solid var(--darker);
     border-radius: 12px;
     padding: 20px;
-
+    margin-top: 40px;
 }
 
 .teendo-kartya {
