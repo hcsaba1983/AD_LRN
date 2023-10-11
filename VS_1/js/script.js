@@ -51,11 +51,11 @@ function onLetoltTeendok() {
 }
 
 function letoltTeendok() {
-
     let teendo = '<div class="kartya-wrapper col-12 col-md-6 col-lg-4">' + 
         '<div class="teendo-kartya">' + 
         '    <div class="teendo-id">#ID#</div>' + 
         '        <p class="teendo-nev">#NEV#</p>' + 
+        '        <p class="felhasznalo-nev">#FELHASZNALO#</p>' + 
         '        <p class="teendo-keszultsege teendo-kesz #KESZ#">KESZ</p>' + 
         '        <p class="teendo-keszultsege teendo-nyitott #NYITOTT#">NYITOTT</p>' + 
         '    </div>' + 
@@ -66,16 +66,23 @@ function letoltTeendok() {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
       .then(json => {
+        json[2]['userId']=2;
         for (let index = 0; index < 6; index++) {
+            if(index == 0) {
+                console.log(JSON.stringify(json[0]));
+            }
+            console.log
             const element = json[index];
 
             let keszE = json[index]['completed'] ? 'd-block' : 'd-none';
             let nyitottE = json[index]['completed'] ? 'd-none' : 'd-block';
+            let felhasznalo = keresFelhasznalo(json[index]['userId']);
 
             teendoDiv += teendo.replace("#NEV#", json[index]['title'])
                                 .replace("#ID#", json[index]['id'])
                                 .replace("#KESZ#", keszE)
-                                .replace("#NYITOTT#", nyitottE);
+                                .replace("#NYITOTT#", nyitottE)
+                                .replace("#FELHASZNALO#", felhasznalo);
 
         }
 
@@ -84,4 +91,14 @@ function letoltTeendok() {
         document.getElementById('teendok').innerHTML = teendoDiv;
       })
     
+}
+
+function keresFelhasznalo(userId) {
+    for (let index = 0; index < users.length; index++) {
+        const element = users[index];
+        if(element['id'] == userId) {
+            return element['name'];
+        }
+    }
+    return '?';
 }
