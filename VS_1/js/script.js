@@ -56,8 +56,8 @@ function letoltTeendok() {
         '<div class="teendo-kartya">' + 
         '    <div class="teendo-id">#ID#</div>' + 
         '        <p class="teendo-nev">#NEV#</p>' + 
-        '        <p class="teendo-keszultsege teendo-kesz">KESZ</p>' + 
-        '        <p class="teendo-keszultsege teendo-nyitott">NYITOTT</p>' + 
+        '        <p class="teendo-keszultsege teendo-kesz #KESZ#">KESZ</p>' + 
+        '        <p class="teendo-keszultsege teendo-nyitott #NYITOTT#">NYITOTT</p>' + 
         '    </div>' + 
         '</div>';
 
@@ -68,8 +68,14 @@ function letoltTeendok() {
       .then(json => {
         for (let index = 0; index < 6; index++) {
             const element = json[index];
-            
-            teendoDiv += teendo.replace("#NEV#", json[index]['title']);
+
+            let keszE = json[index]['completed'] ? 'd-block' : 'd-none';
+            let nyitottE = json[index]['completed'] ? 'd-none' : 'd-block';
+
+            teendoDiv += teendo.replace("#NEV#", json[index]['title'])
+                                .replace("#ID#", json[index]['id'])
+                                .replace("#KESZ#", keszE)
+                                .replace("#NYITOTT#", nyitottE);
 
         }
 
