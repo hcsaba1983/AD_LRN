@@ -56,8 +56,12 @@ function letoltTeendok() {
         '    <div class="teendo-id">#ID#</div>' + 
         '        <p class="teendo-nev">#NEV#</p>' + 
         '        <p class="felhasznalo-nev">#FELHASZNALO#</p>' + 
-        '        <p class="teendo-keszultsege teendo-kesz #KESZ#">KESZ</p>' + 
-        '        <p class="teendo-keszultsege teendo-nyitott #NYITOTT#">NYITOTT</p>' + 
+        '        <p class="teendo-keszultsege teendo-kesz #KESZ#">KESZ' +
+        '           <i class="fa-solid fa-check  #KESZ#"></i>' +
+        '        </p>' + 
+        '        <p class="teendo-keszultsege teendo-nyitott #NYITOTT#">NYITOTT' + 
+        '           <i class="fa-solid fa-clock-rotate-left #NYITOTT#"></i>' +
+        '        </p>' + 
         '    </div>' + 
         '</div>';
 

@@ -87,11 +87,13 @@ input {
     border: 1px solid var(--darker);
     border-radius: 12px;
     padding: 20px;
-    margin-top: 40px;
-}
-
-.teendo-kartya {
+    margin-top: 30px;
+    margin-bottom: 20px;
     position: relative;
+
+    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.39);
 }
 
 .teendo-id {
@@ -101,7 +103,7 @@ input {
     font-weight: bold;
     background: #00C6D7;
     border-radius: 50%;
-    
+
     min-width: 30px;
     line-height: 30px;
     padding-right: 5px;
@@ -114,12 +116,13 @@ input {
     font-style: italic;
     text-transform: uppercase;
     padding: 10px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.35);
 }
 
 .felhasznalo-nev {
     padding-top: 24px;
     padding-bottom: 20px;
-    font-style: italic;
+    
 }
 
 .teendo-keszultsege {
